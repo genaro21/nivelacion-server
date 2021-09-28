@@ -9,17 +9,18 @@ const create = async (req, res) => {
     }
 
     const userOne = await models.user.findById(userOneId);
+    console.log(userOne);
     if (!userOne) {
-      return res.json({ err: "User no existe" });
+      return res.json({ err: "UserOne no existe" });
     }
 
     const userTwo = await models.user.findById(userTwoId);
     if (!userTwo) {
-      return res.json({ err: "User no existe" });
+      return res.json({ err: "UserTwo no existe" });
     }
     const userOwner = await models.user.findById(userOwnerId);
     if (!userOwner) {
-      return res.json({ err: "User no existe" });
+      return res.json({ err: "UserOwner no existe" });
     }
 
     let message = null;
